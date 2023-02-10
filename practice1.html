@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment add</title>
+</head>
+<body>
+    <!-- <div id="comment-container">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, laborum illum pariatur, culpa veritatis eveniet voluptates, ullam quod aliquid provident explicabo excepturi ducimus accusantium deserunt tenetur quaerat rem animi error!</p>
+        <p>Sunt impedit quaerat aliquam vero hic pariatur aperiam, placeat iste, quo iure facilis maiores eveniet perferendis nihil odio eaque? Impedit doloribus mollitia maxime excepturi iste quasi repellat veritatis dolorum debitis!</p>
+        <p>Maiores ducimus at, corrupti et voluptatum fugit accusamus ipsum illo a perspiciatis ex unde deleniti possimus modi culpa, ipsa magni tenetur ipsam quam. Earum cum ullam culpa vel dolore! Dicta.</p>
+    </div>
+    <div>
+        <textarea name="" id="new-comment" cols="60" rows="5" placeholder="Enter your comment"></textarea>
+        <br>
+        <button id="btn-post">Post comment</button>
+    </div> -->
+
+    <h1 id="secret">My secret text</h1>
+    <input type="text" name="" id="confirm-delete" placeholder="Enter delete">
+    <button id="btn-delete" disabled>Delete</button>
+    
+
+    <script>
+        document.getElementById('confirm-delete').addEventListener('keyup',function(event){
+            const text = event.target.value;
+            const deleteButton = document.getElementById('btn-delete')
+            if(text === 'delete'){
+                deleteButton.removeAttribute('disabled')
+            }else{
+                deleteButton.setAttribute('disabled',true);
+            }
+        })
+        document.getElementById('btn-delete').addEventListener('click',function(){
+            const secret = document.getElementById('secret');
+            secret.style.display = 'none';
+        })
+        // document.getElementById('btn-post').addEventListener('click',function(){
+
+        //     const commentBox = document.getElementById('new-comment');
+        //     const newComment = commentBox.value;
+
+        //     const commentContainer = document.getElementById('comment-container');
+        //     const p = document.createElement('p');
+        //     p.innerText = newComment;
+        //     commentContainer.appendChild(p);
+        //     commentBox.value='';
+
+        // })
+    </script>
+</body>
+</html>
